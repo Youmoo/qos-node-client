@@ -1,6 +1,7 @@
 Node client for [qos](https://www.qcloud.com/doc/api/435/6052)
 ===============
 
+`npm i -S qos-node-client`
 
 ## 实现的功能
 
