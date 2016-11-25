@@ -26,7 +26,7 @@ Node client for [qos](https://www.qcloud.com/doc/api/435/6052)
 先创建一个qos client:
 
 ```
-const qos = require('qos');
+const qos = require('qos-node-client');
 
 const appId = '66666666';
 const secretId = 'hello world';
