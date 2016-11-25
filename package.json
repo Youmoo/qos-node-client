@@ -1,0 +1,29 @@
+{
+  "name": "qos-node-client",
+  "version": "0.0.1",
+  "description": "Node client for qos",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d dist"
+  },
+  "keywords": [
+    "qos",
+    "tencent",
+    "cdn"
+  ],
+  "author": "Youmoo <youmoo@vellichor.me> (https://promise.rocks)",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.79.0"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-node7": "^1.4.0"
+  }
+}
