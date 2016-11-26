@@ -11,7 +11,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = (resolve, reject) => (err, resp, body) => {
-
   if (err) {
     reject({ err });
     return;

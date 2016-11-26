@@ -6,7 +6,7 @@
  */
 'use strict';
 
-var _fs = require("fs");
+var _fs = require('fs');
 
 var _fs2 = _interopRequireDefault(_fs);
 

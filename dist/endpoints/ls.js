@@ -23,7 +23,7 @@ const op = 'list';
 const config = exports.config = {
   op,
   method: _fetch.get,
-  params: [/*'op',*/'context', 'num']
+  params: [/* 'op', */'context', 'num']
 };
 
 function ls({ appId, secretId, secretKey, url, bucket: b1 }, { bucket: b2, timestamp, expired, random, dir: fileId, num = 20, context }) {

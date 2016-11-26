@@ -13,11 +13,11 @@ Object.defineProperty(exports, "__esModule", {
 exports.config = undefined;
 exports.default = upload;
 
-var _fs = require("fs");
+var _fs = require('fs');
 
 var _fs2 = _interopRequireDefault(_fs);
 
-var _fetch = require("../util/fetch");
+var _fetch = require('../util/fetch');
 
 var _fetch2 = _interopRequireDefault(_fetch);
 

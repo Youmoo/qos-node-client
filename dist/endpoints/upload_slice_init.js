@@ -14,15 +14,15 @@ Object.defineProperty(exports, "__esModule", {
 exports.config = undefined;
 exports.default = upload_slice_init;
 
-var _request = require("request");
+var _request = require('request');
 
 var _request2 = _interopRequireDefault(_request);
 
-var _sign = require("../crypto/sign");
+var _sign = require('../crypto/sign');
 
 var _sign2 = _interopRequireDefault(_sign);
 
-var _fetch = require("../util/fetch");
+var _fetch = require('../util/fetch');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -35,9 +35,7 @@ const config = exports.config = {
 };
 
 function upload_slice_init({ appId, secretId, secretKey, url, bucket: b1 }, { bucket: b2, auth, fileId, localFile, filesize, slice_size, biz_attr = '', insertOnly = 1 }) {
-
   return new Promise((resolve, reject) => {
-
     if (!localFile) {
       reject({
         err: new Error(`${ op }: parameter 'localFile' is required`)
@@ -69,7 +67,6 @@ function upload_slice_init({ appId, secretId, secretKey, url, bucket: b1 }, { bu
         'Authorization': auth
       }
     }, (err, resp, body) => {
-
       if (err) {
         reject({ err });
         return;

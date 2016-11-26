@@ -11,27 +11,27 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = upload_large_file;
 
-var _fs = require("fs");
+var _fs = require('fs');
 
 var _fs2 = _interopRequireDefault(_fs);
 
-var _sign = require("../crypto/sign");
+var _sign = require('../crypto/sign');
 
 var _sign2 = _interopRequireDefault(_sign);
 
-var _get_file_size = require("../util/get_file_size");
+var _get_file_size = require('../util/get_file_size');
 
 var _get_file_size2 = _interopRequireDefault(_get_file_size);
 
-var _upload_slice_init = require("./upload_slice_init");
+var _upload_slice_init = require('./upload_slice_init');
 
 var _upload_slice_init2 = _interopRequireDefault(_upload_slice_init);
 
-var _upload_slice_data = require("./upload_slice_data");
+var _upload_slice_data = require('./upload_slice_data');
 
 var _upload_slice_data2 = _interopRequireDefault(_upload_slice_data);
 
-var _upload_slice_finish = require("./upload_slice_finish");
+var _upload_slice_finish = require('./upload_slice_finish');
 
 var _upload_slice_finish2 = _interopRequireDefault(_upload_slice_finish);
 
@@ -39,7 +39,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function upload_large_file({ appId, secretId, secretKey, url, bucket: b1 }, { form: { biz_attr = '', insertOnly = 1, slice_size = 524288 } = {}, localFile, bucket: b2, fileId }) {
   return new Promise((resolve, reject) => {
-
     const bucket = b2 || b1;
 
     const auth = (0, _sign2.default)({ appId, secretId, secretKey, bucket, fileId });

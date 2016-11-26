@@ -11,15 +11,15 @@ exports.get = exports.post = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _sign = require("../crypto/sign");
+var _sign = require('../crypto/sign');
 
 var _sign2 = _interopRequireDefault(_sign);
 
-var _request = require("request");
+var _request = require('request');
 
 var _request2 = _interopRequireDefault(_request);
 
-var _default_response_handler = require("./default_response_handler");
+var _default_response_handler = require('./default_response_handler');
 
 var _default_response_handler2 = _interopRequireDefault(_default_response_handler);
 
@@ -33,12 +33,11 @@ const get = exports.get = 'get';
 function fetch({ op, method, params = [], headers = {} }, { appId, secretId, secretKey, url, b1 }, _ref) {
   let { b2, auth, fileId, timestamp, expired, random } = _ref;
 
-  let extra = _objectWithoutProperties(_ref, ["b2", "auth", "fileId", "timestamp", "expired", "random"]);
+  let extra = _objectWithoutProperties(_ref, ['b2', 'auth', 'fileId', 'timestamp', 'expired', 'random']);
 
   const [m, form] = method.toLowerCase() === post ? [post, 'formData'] : [get, 'qs'];
 
   return new Promise((resolve, reject) => {
-
     const bucket = b2 || b1;
 
     const data = params.reduce((p, v) => {

@@ -17,7 +17,6 @@ var _crypto2 = _interopRequireDefault(_crypto);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function sign({ appId: a, bucket: b, secretId: k, secretKey, timestamp: t = Date.now() / 1000, expired: e = t + 1000 * 60 * 5, random: r = randomIntInclusive(0, 100000), fileId: f = '' }) {
-
   // 在这里进行统一的参数验证
   if (!b) {
     throw new Error('parameter `bucket` is required.');
@@ -38,7 +37,7 @@ function sign({ appId: a, bucket: b, secretId: k, secretKey, timestamp: t = Date
   let total = new Uint8Array(multi_sha1.length + u.length);
   total.set(multi_sha1, 0);
   total.set(u, multi_sha1.length);
-  return new Buffer(total).toString("base64");
+  return new Buffer(total).toString('base64');
 }
 
 // 生成随机数
