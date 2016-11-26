@@ -4,17 +4,17 @@
  * @author youmoo
  * @since 2016/11/24
  */
-'use strict';
+'use strict'
 
-import fetch, {get as method} from "../util/fetch";
+import fetch, {get as method} from '../util/fetch'
 
-const op = 'stat';
+const op = 'stat'
 
 export const config = {
   op,
   method
-};
+}
 
-export default function stat({appId, secretId, secretKey, url, bucket:b1}, {bucket:b2, fileId}) {
-  return fetch(config, {appId, secretId, secretKey, url, b1}, {b2, fileId});
+export default function stat ({appId, secretId, secretKey, url, bucket: b1}, {bucket: b2, fileId}) {
+  return fetch(config, {appId, secretId, secretKey, url, b1}, {b2, fileId})
 }

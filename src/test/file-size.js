@@ -4,12 +4,12 @@
  * @author youmoo
  * @since 2016/11/23
  */
-'use strict';
+'use strict'
 
-import fs from "fs";
+import fs from 'fs'
 
-const localFile = process.argv[1];
+const localFile = process.argv[1]
 
 fs.stat(localFile, (err, stat) => {
-  console.log(stat);
-});
+  console.log(stat)
+})

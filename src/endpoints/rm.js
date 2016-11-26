@@ -6,17 +6,17 @@
  * @author youmoo
  * @since 2016/11/24
  */
-'use strict';
+'use strict'
 
-import fetch, {post as method} from "../util/fetch";
+import fetch, {post as method} from '../util/fetch'
 
-const op = 'delete';
+const op = 'delete'
 
 export const config = {
   op,
   method
-};
+}
 
-export default function rm({appId, secretId, secretKey, url, bucket:b1}, {bucket:b2, fileId}) {
-  return fetch(config, {appId, secretId, secretKey, url, b1}, {b2, fileId});
+export default function rm ({appId, secretId, secretKey, url, bucket: b1}, {bucket: b2, fileId}) {
+  return fetch(config, {appId, secretId, secretKey, url, b1}, {b2, fileId})
 }

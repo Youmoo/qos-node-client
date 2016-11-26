@@ -5,9 +5,12 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint-fix":"standard --fix src/**/*.js",
+    "lint": "standard src/**/*.js",
     "build": "babel src -d dist"
   },
   "keywords": [
+    "cos",
     "qos",
     "tencent",
     "cdn"
@@ -24,6 +27,7 @@
   ],
   "devDependencies": {
     "babel-cli": "^6.18.0",
-    "babel-preset-node7": "^1.4.0"
+    "babel-preset-node7": "^1.4.0",
+    "standard": "^8.6.0"
   }
 }

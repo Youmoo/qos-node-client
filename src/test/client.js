@@ -4,20 +4,20 @@
  * @author youmoo
  * @since 2016/11/23
  */
-'use strict';
+'use strict'
 
-import qos from "../index";
-import {appId, secretId, secretKey, bucket} from "./config";
+import qos from '../index'
+import {appId, secretId, secretKey, bucket} from './config'
 
-const client = qos.createClient({appId, secretId, secretKey, bucket});
+const client = qos.createClient({appId, secretId, secretKey, bucket})
 
 // 方便追踪promise问题
 process.on('unhandledRejection', function (reason, p) {
-  console.log("Possibly Unhandled Rejection at: Promise ", p, " reason: ", reason);
+  console.log('Possibly Unhandled Rejection at: Promise ', p, ' reason: ', reason)
   // application specific logging here
-});
+})
 
-export default client;
+export default client
 
-export const localFile = __dirname + '/lovely-cat.jpg';
-export const largeFile = __dirname + '/green-city.jpg';
+export const localFile = __dirname + '/lovely-cat.jpg'
+export const largeFile = __dirname + '/green-city.jpg'

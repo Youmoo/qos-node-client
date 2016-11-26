@@ -4,25 +4,23 @@
  * @author youmoo
  * @since 2016/11/25
  */
-'use strict';
-
+'use strict'
 
 export default (resolve, reject) => (err, resp, body) => {
-
   if (err) {
-    reject({err});
-    return;
+    reject({err})
+    return
   }
 
-  const json = JSON.parse(body);
+  const json = JSON.parse(body)
 
   if (resp.statusCode != 200) {
     reject({
       statusCode: resp.statusCode,
       statusMessage: resp.statusMessage,
       json
-    });
-    return;
+    })
+    return
   }
-  resolve(json);
+  resolve(json)
 }
