@@ -1,7 +1,41 @@
 Node client for [qos](https://www.qcloud.com/doc/api/435/6052)
 ===============
 
+[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+
 `npm i -S qos-node-client`
+
+## Usage
+
+先创建一个qos client:
+
+```
+const qos = require('qos-node-client');
+
+const appId = '66666666';
+const secretId = 'hello world';
+const secretKey = '你好，世界';
+const bucket = 'demo';
+
+const client = qos.createClient({appId, secretId, secretKey, bucket});
+```
+
+上传:
+
+```
+const localFile = '/path/to/lovely-cat.jpg';
+const fileId = '/dir/to/file.jpg';
+client.upload({localFile, fileId})
+  .then(res => {
+    console.log('上传成功', res);
+  })
+  .catch(err => {
+    console.error('上传文件时报错', err);
+  });
+```
+
+更多参数及用法请参见[test](src/test)
+
 
 ## 实现的功能
 
@@ -20,38 +54,6 @@ Node client for [qos](https://www.qcloud.com/doc/api/435/6052)
   7. [x] 更新文件属性
   8. [x] 删除文件
   9. [x] 移动文件
-
-
-## 示例
-
-先创建一个qos client:
-
-```
-const qos = require('qos-node-client');
-
-const appId = '66666666';
-const secretId = 'hello world';
-const secretKey = '你好，世界';
-const bucket = 'demo';
-
-const client = qos.createClient({appId, secretId, secretKey, bucket});
-```
-
-### 上传
-
-```
-const localFile = '/path/to/lovely-cat.jpg';
-const fileId = '/dir/to/file.jpg';
-client.upload({localFile, fileId})
-  .then(res => {
-    console.log('上传成功', res);
-  })
-  .catch(err => {
-    console.error('上传文件时报错', err);
-  });
-```
-
-更多参数及用法请参见[test](src/test)
 
 
 ### 入参说明
