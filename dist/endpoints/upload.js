@@ -28,7 +28,7 @@ const op = 'upload';
 const config = exports.config = {
   op,
   method: _fetch.post,
-  params: ['filecontent', 'biz_attr', 'insertOnly']
+  params: [{ name: 'filecontent', apply: v => v }, 'biz_attr', 'insertOnly']
 };
 
 function upload({ appId, secretId, secretKey, url, bucket: b1 }, { form: { biz_attr = '', insertOnly = 1 } = {}, localFile, bucket: b2, fileId, timestamp, expired, random }) {

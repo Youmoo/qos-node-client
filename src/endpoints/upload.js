@@ -15,10 +15,10 @@ const op = 'upload'
 export const config = {
   op,
   method,
-  params: ['filecontent', 'biz_attr', 'insertOnly']
+  params: [{name: 'filecontent', apply: v => v}, 'biz_attr', 'insertOnly']
 }
 
-export default function upload ({appId, secretId, secretKey, url, bucket: b1}, {form: {biz_attr = '', insertOnly = 1} = {}, localFile, bucket: b2, fileId, timestamp, expired, random}) {
+export default function upload({appId, secretId, secretKey, url, bucket: b1}, {form: {biz_attr = '', insertOnly = 1} = {}, localFile, bucket: b2, fileId, timestamp, expired, random}) {
   return fetch(config, {appId, secretId, secretKey, url, b1}, {
     b2,
     biz_attr,

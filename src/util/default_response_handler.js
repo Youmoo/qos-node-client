@@ -14,7 +14,7 @@ export default (resolve, reject) => (err, resp, body) => {
 
   const json = JSON.parse(body)
 
-  if (resp.statusCode != 200) {
+  if (resp.statusCode !== 200) {
     reject({
       statusCode: resp.statusCode,
       statusMessage: resp.statusMessage,
