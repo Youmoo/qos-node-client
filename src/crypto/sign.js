@@ -6,9 +6,9 @@
  */
 'use strict'
 
-import crypto from 'crypto'
+import crypto from "crypto"
 
-function sign ({appId: a, bucket: b, secretId: k, secretKey, timestamp: t = Date.now() / 1000, expired: e = t + 1000 * 60 * 5, random: r = randomIntInclusive(0, 100000), fileId: f = ''}) {
+function sign({appId: a, bucket: b, secretId: k, secretKey, timestamp: t = Date.now() / 1000, expired: e = t + 1000 * 60 * 5, random: r = randomIntInclusive(0, 100000), fileId: f = ''}) {
   // 在这里进行统一的参数验证
   if (!b) {
     throw new Error('parameter `bucket` is required.')
@@ -24,16 +24,15 @@ function sign ({appId: a, bucket: b, secretId: k, secretKey, timestamp: t = Date
   // 貌似这里参数的顺序可以任意
   const multi = `a=${a}&b=${b}&k=${k}&e=${e}&t=${t}&r=${r}&f=${f}`
   const multi_sha1 = crypto.createHmac('sha1', secretKey).update(multi).digest()
-  const u = Buffer.from(multi, 'utf-8')
 
-  let total = new Uint8Array(multi_sha1.length + u.length)
-  total.set(multi_sha1, 0)
-  total.set(u, multi_sha1.length)
-  return new Buffer(total).toString('base64')
+  const buffer = Buffer.allocUnsafe(multi_sha1.length + Buffer.byteLength(multi, 'utf8'))
+  multi_sha1.copy(buffer)
+  buffer.write(multi, multi_sha1.length, 'utf8')
+  return buffer.toString('base64')
 }
 
 // 生成随机数
-function randomIntInclusive (low, high) {
+function randomIntInclusive(low, high) {
   return Math.floor(Math.random() * (high - low + 1) + low)
 }
 
