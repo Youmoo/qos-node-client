@@ -1,5 +1,5 @@
 {
-  "name": "qos-node-client",
+  "name": "tan-qos-node-client",
   "version": "0.0.4",
   "description": "Node client for qos",
   "main": "dist/index.js",
@@ -15,7 +15,7 @@
     "tencent",
     "cdn"
   ],
-  "author": "Youmoo <youmoo@vellichor.me> (https://promise.rocks)",
+  "author": "Farzer <huaentan@gmai.com>",
   "license": "MIT",
   "dependencies": {
     "request": "^2.79.0"
