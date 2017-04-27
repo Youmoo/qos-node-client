@@ -123,7 +123,7 @@ export default {
   /**
    * 创建一个qos实例
    */
-  createClient: ({appId, secretId, secretKey, bucket, delta = 3000}) => {
-    return new ObjectStorage({appId, secretId, secretKey, bucket, delta});
+  createClient: ({appId, secretId, secretKey, region, bucket, delta = 3000}) => {
+    return new ObjectStorage({appId, secretId, secretKey, region, bucket, delta});
   }
 };

@@ -61,7 +61,7 @@ class ObjectStorage {
     this.secretId = secretId;
     this.secretKey = secretKey;
     this.delta = delta;
-    this.url = `http://${ region }.file.myqcloud.com/files/v2/${ appId }/`;
+    this.url = `http://${region}.file.myqcloud.com/files/v2/${appId}/`;
     this.bucket = bucket;
   }
 
@@ -156,7 +156,7 @@ exports.default = {
   /**
    * 创建一个qos实例
    */
-  createClient: ({ appId, secretId, secretKey, bucket, delta = 3000 }) => {
-    return new ObjectStorage({ appId, secretId, secretKey, bucket, delta });
+  createClient: ({ appId, secretId, secretKey, region, bucket, delta = 3000 }) => {
+    return new ObjectStorage({ appId, secretId, secretKey, region, bucket, delta });
   }
 };

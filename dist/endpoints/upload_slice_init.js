@@ -38,7 +38,7 @@ function upload_slice_init({ appId, secretId, secretKey, url, bucket: b1 }, { bu
   return new Promise((resolve, reject) => {
     if (!localFile) {
       reject({
-        err: new Error(`${ op }: parameter 'localFile' is required`)
+        err: new Error(`${op}: parameter 'localFile' is required`)
       });
       return;
     }
@@ -49,7 +49,7 @@ function upload_slice_init({ appId, secretId, secretKey, url, bucket: b1 }, { bu
       auth = (0, _sign2.default)({ appId, secretId, secretKey, bucket, fileId });
     }
 
-    const uri = `${ url }${ bucket }${ fileId }`;
+    const uri = `${url}${bucket}${fileId}`;
 
     const formData = {
       op,
