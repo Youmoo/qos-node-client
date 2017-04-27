@@ -31,9 +31,8 @@ const post = exports.post = 'post';
 const get = exports.get = 'get';
 
 function fetch({ op, method, params = [], headers = {} }, { appId, secretId, secretKey, url, b1 }, _ref) {
-  let { b2, auth, fileId, timestamp, expired, random } = _ref;
-
-  let extra = _objectWithoutProperties(_ref, ['b2', 'auth', 'fileId', 'timestamp', 'expired', 'random']);
+  let { b2, auth, fileId, timestamp, expired, random } = _ref,
+      extra = _objectWithoutProperties(_ref, ['b2', 'auth', 'fileId', 'timestamp', 'expired', 'random']);
 
   const [m, form] = method.toLowerCase() === post ? [post, 'formData'] : [get, 'qs'];
 
@@ -55,7 +54,7 @@ function fetch({ op, method, params = [], headers = {} }, { appId, secretId, sec
     }, { op });
 
     auth = auth || (0, _sign2.default)({ appId, bucket, secretId, secretKey, fileId, timestamp, expired, random });
-    const uri = `${ url }${ bucket }${ fileId }`;
+    const uri = `${url}${bucket}${fileId}`;
 
     headers = _extends({
       'Content-Type': 'application/json',
