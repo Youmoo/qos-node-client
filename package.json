@@ -1,11 +1,11 @@
 {
   "name": "qos-node-client",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Node client for qos",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint-fix":"standard --fix src/**/*.js",
+    "lint-fix": "standard --fix src/**/*.js",
     "lint": "standard src/**/*.js",
     "build": "babel src -d dist"
   },
@@ -28,6 +28,6 @@
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-preset-node7": "^1.4.0",
-    "standard": "^8.6.0"
+    "standard": "^10.0.2"
   }
 }

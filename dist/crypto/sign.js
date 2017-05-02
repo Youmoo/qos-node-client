@@ -23,14 +23,14 @@ function sign({ appId: a, bucket: b, secretId: k, secretKey, timestamp: t = Date
   }
 
   if (f !== '' && !f.startsWith('/')) {
-    throw new Error(`parameter 'fileId' must start with '/', current value is '${ f }'`);
+    throw new Error(`parameter 'fileId' must start with '/', current value is '${f}'`);
   }
 
   // 一个fileId由 /appId/bucket/path组成
-  f = `/${ a }/${ b }${ encodeURI(f) }`;
+  f = `/${a}/${b}${encodeURI(f)}`;
 
   // 貌似这里参数的顺序可以任意
-  const multi = `a=${ a }&b=${ b }&k=${ k }&e=${ e }&t=${ t }&r=${ r }&f=${ f }`;
+  const multi = `a=${a}&b=${b}&k=${k}&e=${e}&t=${t}&r=${r}&f=${f}`;
   const multi_sha1 = _crypto2.default.createHmac('sha1', secretKey).update(multi).digest();
 
   const buffer = Buffer.allocUnsafe(multi_sha1.length + Buffer.byteLength(multi, 'utf8'));
