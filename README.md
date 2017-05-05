@@ -36,6 +36,8 @@ client.upload({localFile, fileId})
   });
 ```
 
+如需启用日志，设置环境变量: `DEBUG=qos-node-client:*`
+
 更多参数及用法请参见[test](src/test)
 
 

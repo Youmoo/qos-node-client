@@ -4,14 +4,17 @@
  */
 'use strict'
 
+import debug from 'debug'
 import sign from '../crypto/sign'
 import request from 'request'
 import handler from './default_response_handler'
 
+const log = debug('qos-node-client:fetch')
+
 export const post = 'post'
 export const get = 'get'
 
-function fetch ({op, method, params = [], headers = {}}, {appId, secretId, secretKey, url, b1}, {b2, auth, fileId, timestamp, expired, random, ...extra}) {
+function fetch({op, method, params = [], headers = {}}, {appId, secretId, secretKey, url, b1}, {b2, auth, fileId, timestamp, expired, random, ...extra}) {
   const [m, form] = method.toLowerCase() === post ? [post, 'formData'] : [get, 'qs']
 
   return new Promise((resolve, reject) => {
@@ -39,9 +42,9 @@ function fetch ({op, method, params = [], headers = {}}, {appId, secretId, secre
       ...headers
     }
 
-    console.info(m, 'uri:', uri)
+    log(m, 'uri:', uri)
     // console.info(form, data);
-    console.log(headers)
+    log('headers: %o', headers)
 
     // 发送请求
     request[m]({

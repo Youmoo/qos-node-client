@@ -11,6 +11,10 @@ exports.get = exports.post = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+var _debug = require('debug');
+
+var _debug2 = _interopRequireDefault(_debug);
+
 var _sign = require('../crypto/sign');
 
 var _sign2 = _interopRequireDefault(_sign);
@@ -26,6 +30,8 @@ var _default_response_handler2 = _interopRequireDefault(_default_response_handle
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+const log = (0, _debug2.default)('qos-node-client:fetch');
 
 const post = exports.post = 'post';
 const get = exports.get = 'get';
@@ -61,9 +67,9 @@ function fetch({ op, method, params = [], headers = {} }, { appId, secretId, sec
       'Authorization': auth
     }, headers);
 
-    console.info(m, 'uri:', uri);
+    log(m, 'uri:', uri);
     // console.info(form, data);
-    console.log(headers);
+    log('headers: %o', headers);
 
     // 发送请求
     _request2.default[m]({
